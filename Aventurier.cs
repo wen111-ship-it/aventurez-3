@@ -36,7 +36,11 @@ public  class Aventurier :Personnage
             );
         
     }
-
+    public void EquiperArme(Arme arme)
+    {
+        this.ArmeEquipee = arme;
+        Parler($"{this.Nom} équipe {arme.Nom}.");
+    }
 
     
 }
