@@ -28,10 +28,10 @@ public  class Sorcier : Aventurier
     }
     public bool Lancer(Sort sortilege,Personnage cible)
     {
-        if (this.mana >= sortilege.manaCost)
+        if (this.mana >= sortilege.ManaCost)
         {
             sortilege.lancer(this, cible);
-            mana-=sortilege.manaCost;
+            mana-=sortilege.ManaCost;
             return true;
         }
         return false;

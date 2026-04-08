@@ -31,9 +31,38 @@ mesCombattants.Add(Gandalf);
 mesCombattants.Add(gobelin);
 mesCombattants.Add(Conan);
 
-foreach (Personnage p in mesCombattants)
+
+while (Smaug.PointsDeVie > 0)
 {
+    foreach (Personnage p in mesCombattants)
+    {
     p.Attaquer(Smaug);
+    }
+    foreach (Personnage p in mesCombattants)
+    {
+    p.Attaquer(Smaug);
+    }
+    if (mesCombattants.Any(p => p.PointsDeVie <= 0))
+    {
+        Console.WriteLine($"{mesCombattants.First(p => p.PointsDeVie <= 0).Nom} est mort ! Smaug a gagné !");
+        break;
+    }
+    if (Smaug.PointsDeVie <= 0)
+    {
+        Console.WriteLine($"{Smaug.Nom} est mort ! vous avez gagné !");
+        break;
+    }
 }
+Coffre c=new Coffre();
+    PNJ bob=new PNJ("bob");
+    List<IInteractif>decors=new List<IInteractif>();
+    decors.Add(c);
+    decors.Add(bob);
+
+    foreach (IInteractif d in decors)
+    {
+        d.Interagir(Gandalf);
+    }
+
 
 
